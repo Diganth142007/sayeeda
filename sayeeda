@@ -1,0 +1,11 @@
+mkdir campus-portal
+cd campus-portal
+git init
+git config user.name "sayeeda"
+git config user.email "sayeeda@university.edu"
+echo "# Campus Portal Project" > README.md
+git status
+git add README.md
+git commit -m "chore: initial project setup"
+git status
+git log -1 --format="%h %s%nAuthor: %an <%ae>"
