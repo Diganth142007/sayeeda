@@ -9,3 +9,19 @@ git add README.md
 git commit -m "chore: initial project setup"
 git status
 git log -1 --format="%h %s%nAuthor: %an <%ae>"
+git branch
+git switch -c feature/login-page
+cat > login.html <<'EOF'
+<!DOCTYPE html>
+<html>
+<head><title>Login Page</title></head>
+<body>
+</body>
+</html>
+EOF
+git add login.html
+python -c "from pathlib import Path; p=Path('login.html'); s=p.read_text(); s=s.replace('<body>', '<body>\\n <label for=\"username\">Username:</label>\\n <input type=\"text\" id=\"username\" name=\"username\">'); p.write_text(s)"
+git add login.html
+git commit -m "feat(auth): add login form input"
+git branch
+git log --oneline --graph --all
